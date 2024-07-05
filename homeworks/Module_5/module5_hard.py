@@ -38,7 +38,7 @@ class UrTube:
         if nickname in User.data:
             print(f"Пользователь {nickname} уже существует")
         else:
-            user = User(nickname, password, age)
+            User(nickname, password, age)
             User.data[nickname] = [password, age]
             self.current_user = nickname
 
@@ -76,7 +76,7 @@ class UrTube:
 
 ur = UrTube()
 v1 = Video('Лучший язык программирования 2024 года', 200)
-v2 = Video('Для чего девушкам парень программист?', 10, adult_mode=True)
+v2 = Video('Для чего девушкам парень программист?', 2, adult_mode=True)
 
 # Добавление видео
 ur.add(v1, v2)

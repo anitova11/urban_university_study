@@ -1,14 +1,11 @@
-# print(23891471923807487.142352314353455 + 23891471923843245.142352314334563 >
-# 23891471923807487.142352314356734 + 23891471923843245.142352314334553)
+class Figure:
+    # sides_count = 0
 
-a = 5
-b = 3 + 2
-c = [5]
-print(id(a), id(b), a == b, a == c[0], c[0] == b)
-print(a.__eq__(b))
-print(a is b)
+    def __init__(self, color, sides, filled=True):
+        self.__color = color
+        self.filled = filled
+        self.sides = [sides]
 
-age = input('your age: ')
-print(age, type(age))
-age = int(input('your age: '))
-print(age, type(age))
+
+f1 = Figure('r', 1)
+print(f1.sides)
