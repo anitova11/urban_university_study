@@ -7,6 +7,7 @@ def custom_write(file_name, strings):
         bb = file.tell()
         file.write(i + '\n')
         my_dict[(count, bb)] = i
+    file.close()
     return my_dict
 
 
