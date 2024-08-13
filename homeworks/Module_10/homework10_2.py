@@ -15,9 +15,9 @@ class Knight(Thread):
         while vrag > 0:
             vrag -= self.power
             days += 1
-            print(f'{self.name} сражается {days} день(дня)..., осталось {vrag} воинов.')
+            print(f'{self.name} сражается {days} день(дня)..., осталось {vrag} воинов.\n', end='')
             sleep(1)
-        print(f'{self.name} одержал победу спустя {days} дней(дня)!')
+        print(f'{self.name} одержал победу спустя {days} дней(дня)!\n', end='')
 
 
 first_knight = Knight('Sir Lancelot', 10)
