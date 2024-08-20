@@ -1,0 +1,3 @@
+Используйте кодировку utf-8. text text
+Because there are 2 languages!
+Спасибо!
