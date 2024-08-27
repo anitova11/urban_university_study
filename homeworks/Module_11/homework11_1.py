@@ -25,8 +25,8 @@ for i in range(4):
 
 
 if __name__ == '__main__':
+    start = datetime.datetime.now()
     with multiprocessing.Pool(processes=6) as pool:
-        start = datetime.datetime.now()
         pool.map(read_info, files)
     end = datetime.datetime.now()
     print(end - start)
