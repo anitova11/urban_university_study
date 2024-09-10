@@ -13,7 +13,7 @@ def read_info(name):
 
 files = []
 for i in range(4):
-    files.append(f'./numbers/file_{i + 1}.txt')
+    files.append(f'./numbers/file {i + 1}.txt')
 
 # start = datetime.datetime.now()
 # for i in range(1, 5):
