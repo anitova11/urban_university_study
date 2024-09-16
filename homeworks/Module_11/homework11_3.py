@@ -24,18 +24,22 @@ def add(x):
 
 def introspection_info(obj):
     inf = {}
-    inf['type'] = str(type(obj)).split()[1]                     # тип объекта
-    inf['module'] = getmodule(obj)                              # из какого модуля
-    inf['methods'] = dir(obj)                                   # методы объекта
-    inf['callable'] = callable(obj)                             # можем ли вызвать объект
+    d = []
+    at = []
+    inf['type'] = obj.__class__.__name__  # тип объекта
+    inf['module'] = obj.__class__.__module__  # из какого модуля
+    for i in dir(obj):
+        if callable(getattr(obj, i)):
+            d.append(i)
+        else:
+            at.append(i)
+    inf['methods'] = d  # методы объекта
+    inf['callable'] = callable(obj)  # можем ли вызвать объект
+
+    inf['attributes'] = at  # атрибуты
 
     try:
-        inf['attributes'] = obj.__dict__                        # если есть атрибуты
-    except AttributeError:
-        inf['attributes'] = 'Object has no attributes'
-
-    try:
-        inf['name'] = obj.__name__                              # если есть имя
+        inf['name'] = obj.__name__  # если есть имя
     except AttributeError:
         inf['name'] = None
 
