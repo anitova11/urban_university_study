@@ -29,9 +29,15 @@ class TournamentTest(unittest.TestCase):
         self.assertTrue(TournamentTest.all_result[2][2] == 'Ник')
 
     def test_start3(self):
-        tour = tournament.Tournament(90, self.runner1, self.runner2, self.runner3)
+        tour = tournament.Tournament(90, self.runner3, self.runner2, self.runner1)
         TournamentTest.all_result[3] = tour.start()
-        self.assertTrue(TournamentTest.all_result[3][3] == 'Ник')
+        self.assertTrue(TournamentTest.all_result[3][3] == 'Ник')  # Ник здесь будет 3м, но на 1м месте Андрей
+
+    def test_start4(self):
+        tour = tournament.Tournament(90, *sorted([self.runner3, self.runner2, self.runner1],
+                                                 key=lambda x: x.speed, reverse=True))
+        TournamentTest.all_result[3.1] = tour.start()
+        self.assertTrue(TournamentTest.all_result[3.1][1] == 'Усейн')  # если добавить сортировку при создании tour
 
 
 if __name__ == '__main__':

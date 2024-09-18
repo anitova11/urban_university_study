@@ -1,5 +1,3 @@
-
-
 class Runner:
     def __init__(self, name, speed=5):
         self.name = name
@@ -25,7 +23,9 @@ class Runner:
 class Tournament:
     def __init__(self, distance, *participants):
         self.full_distance = distance
-        self.participants = list(participants)
+        self.participants = list(participants)  # как было в задании
+        # возможное решение с сортировкой
+        #self.participants = sorted(participants, key=lambda x: x.speed, reverse=True)
 
     def start(self):
         finishers = {}
@@ -34,7 +34,7 @@ class Tournament:
             for participant in self.participants:
                 participant.run()
                 if participant.distance >= self.full_distance:
-                    finishers[place] = participant
+                    finishers[place] = participant.name
                     place += 1
                     self.participants.remove(participant)
 
@@ -48,5 +48,7 @@ class Tournament:
 # runners = [runner3, runner2, runner1]
 # runners.sort(key=lambda x: x.speed, reverse=True)
 #
+# tour = Tournament(90, runner3, runner2, runner1)
 # tour = Tournament(90, *runners)
+#
 # print(tour.start())
