@@ -1,5 +1,6 @@
 import unittest
 import calc
+import random
 
 
 class CalcTest(unittest.TestCase):
@@ -17,9 +18,11 @@ class CalcTest(unittest.TestCase):
     def tearDownClass(cls):  # после всех методов
         print('bye all tests')
 
+    @unittest.skip('Причина пропуска')
     def test_add(self):
         self.assertEqual(calc.add(1, 2), 3)
 
+    @unittest.skipIf(random.randint(0, 5) > 2, 'Число больше двух, поэтому не будет теста')
     def test_mul(self):
         self.assertEqual(calc.mul(1, 2), 2)
 

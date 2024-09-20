@@ -25,7 +25,7 @@ class Tournament:
         self.full_distance = distance
         self.participants = list(participants)  # как было в задании
         # возможное решение с сортировкой
-        #self.participants = sorted(participants, key=lambda x: x.speed, reverse=True)
+        self.participants = sorted(participants, key=lambda x: x.speed, reverse=True)
 
     def start(self):
         finishers = {}
