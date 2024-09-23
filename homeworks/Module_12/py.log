@@ -1,0 +1,7 @@
+2024-09-23 18:55:39,131 | INFO | Успешное деление 3 / 4
+2024-09-23 18:55:39,132 | ERROR | Error division
+Traceback (most recent call last):
+  File "C:\Users\bfi18\PycharmProjects\start_project\homeworks\Module_12\calc.py", line 14, in div
+    d = a / b
+        ~~^~~
+ZeroDivisionError: division by zero
