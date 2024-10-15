@@ -18,13 +18,24 @@ kb = InlineKeyboardMarkup()
 button = InlineKeyboardButton(text='Info', callback_data='info')
 kb.add(button)
 
+start_menu = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text='Info')],
+        [KeyboardButton(text='health'),
+         KeyboardButton(text='health2')],
+        [KeyboardButton(text='info2')]
+
+    ],
+    resize_keyboard=True
+)
+
 
 @dp.message_handler(commands='start')
 async def starter(message):
-    await message.answer('Hi!', reply_markup=kb)
+    await message.answer('Hi!', reply_markup=start_menu)
 
 
-@dp.callback_query_handlers(text='info')  # из callback_data
+@dp.callback_query_handler(text='info')  # из callback_data
 async def infor(call):
     await call.message.answer('Информация типо')
     await call.answer()
@@ -32,14 +43,14 @@ async def infor(call):
 
 # ----------------------------------------------------------
 
-        # @dp.message_handler(commands='start')
-        # async def start_(message):
-        #     await message.answer('Hi!', reply_markup=kb)
-        #
-        #
-        # @dp.message_handler(text='Info')
-        # async def inform(message):
-        #     await message.answer('Информация типо')
+# @dp.message_handler(commands='start')
+# async def start_(message):
+#     await message.answer('Hi!', reply_markup=kb)
+#
+#
+# @dp.message_handler(text='Info')
+# async def inform(message):
+#     await message.answer('Информация типо')
 
 # -----------------------------------------------------------
 
