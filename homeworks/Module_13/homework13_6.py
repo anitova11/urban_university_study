@@ -4,6 +4,7 @@ import asyncio
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+import tg_bot_db
 
 
 api = ''
