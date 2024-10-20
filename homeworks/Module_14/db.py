@@ -23,10 +23,12 @@ cursor.execute("CREATE INDEX IF NOT EXISTS idx_email ON Users (email)")
 
 # cursor.execute("DELETE FROM Users WHERE username = ?", ("test_user0", ))
 
-cursor.execute('SELECT username, age, AVG(age) FROM Users WHERE age % 2 > 0 GROUP BY age')
+# cursor.execute('SELECT username, age, AVG(age) FROM Users WHERE age % 2 > 0 GROUP BY age')
+cursor.execute('SELECT COUNT(*) FROM Users')
 users = cursor.fetchall()
-for user in users:
-    print(user)
+print(users)
+# for user in users:
+#     print(user)
 
 connection.commit()
 connection.close()
