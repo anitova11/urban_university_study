@@ -6,7 +6,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import asyncio
-
+from admin import *
 from practice_config import *
 from practice_keyaboards import *
 from practice_text import *

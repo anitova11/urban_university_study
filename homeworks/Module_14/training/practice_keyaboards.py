@@ -21,3 +21,12 @@ buy_kb = InlineKeyboardMarkup(resize_keyboard=True)
 button7 = InlineKeyboardButton(text='Купить', url='http://ya.ru')
 button8 = InlineKeyboardButton(text='Назад', callback_data='back')
 buy_kb.add(button7)
+
+admin_panel = InlineKeyboardMarkup([
+    [InlineKeyboardButton(text='Пользователи', callback_data='users')],
+    [InlineKeyboardButton(text='Статистика', callback_data='stat')],
+    [
+        InlineKeyboardButton(text='Блокировка', callback_data='block'),
+        InlineKeyboardButton(text='Разблокировка', callback_data='unblock')
+    ]
+])
